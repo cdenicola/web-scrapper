@@ -16,11 +16,11 @@ def web_scrape(wb, web_address):
         print("Received Valid Response from website")
 
     # Look for tables
-    table_class = input("Table class name (press space for all tables): ").strip()  # Table's HTML class tag
+    table_class = input("Table class name (press enter for all tables): ").strip()  # Table's HTML class tag
 
     soup = BeautifulSoup(response.content, 'html.parser')
-    if table_class == "":
-        stat_table = soup.find_all('table', class_=table_class) # NEED TO FIX
+    if table_class == "\n":
+        stat_table = soup.find_all('table')  # TODO: FIX no-class lookup
     else:
         stat_table = soup.find_all('table', class_=table_class)
 
@@ -74,10 +74,10 @@ def main():
         dest_filename = input("Destination file name: ").strip()  # Output .xlsx destination file
         if dest_filename != "":
             break
-    workbook.remove(workbook.active)
+    workbook.remove(workbook.active)  # Clear blank default sheet
     workbook.save(filename=dest_filename + ".xlsx")
     print("Successful generated ", dest_filename, ".xls", sep="")
-
+    quit()
 
 input("\rWelcome to Web-Scrapper, press any key to continue to continue...")
 print(end="\n\n")
