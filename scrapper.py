@@ -20,7 +20,7 @@ def web_scrape(wb, web_address):
 
     soup = BeautifulSoup(response.content, 'html.parser')
     if table_class == "\n":
-        stat_table = soup.find_all('table')  # TODO: FIX no-class lookup
+        stat_table = soup.find_all('table')  # TODO: FIX class-less lookup
     else:
         stat_table = soup.find_all('table', class_=table_class)
 
@@ -78,6 +78,7 @@ def main():
     workbook.save(filename=dest_filename + ".xlsx")
     print("Successful generated ", dest_filename, ".xls", sep="")
     quit()
+
 
 input("\rWelcome to Web-Scrapper, press any key to continue to continue...")
 print(end="\n\n")
