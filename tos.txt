@@ -1,0 +1,8 @@
+By accessing, using, modifying, or taking inspiration 
+from this code, you are agreeing to only use the 
+information contained here to access websites and 
+data that you have authorized access to, according 
+to Computer Fraud and Abuse Act.
+
+For more information on allowed scrapping, refer 
+to [Orin S. Kerr's Article](https://reason.com/2019/09/09/scraping-a-public-website-doesnt-violate-the-cfaa-ninth-circuit-mostly-holds/)
